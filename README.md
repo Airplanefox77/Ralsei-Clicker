@@ -12,4 +12,6 @@ __________________________________________________
 
 Changelog:
 
-Added the background, and a "money counter" system.
+(1.0) Added the background, and a "money counter" system.
+
+(2.0) Added a functioning shop, where you can purchase auto clickers, to click for you.
