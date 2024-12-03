@@ -13,12 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let money = parseInt(localStorage.getItem("money")) || 0;
     let autoClickers = parseInt(localStorage.getItem("autoClickers")) || 0;
+    
+    // Retrieve autoClickerCosts from localStorage or initialize them
     const originalAutoClickerCosts = {
         button1: 50,
         button2: 200,
         button3: 800
     };
-    let autoClickerCosts = {...originalAutoClickerCosts}; // Clone the original costs
+    let autoClickerCosts = JSON.parse(localStorage.getItem("autoClickerCosts")) || {...originalAutoClickerCosts};
     let autoClickerInterval = 1000;
 
     // Update the UI with saved values
@@ -61,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
             autoClickerCosts = {...originalAutoClickerCosts}; // Reset the costs
             localStorage.setItem("money", money);
             localStorage.setItem("autoClickers", autoClickers);
+            localStorage.setItem("autoClickerCosts", JSON.stringify(autoClickerCosts));
             moneyCounter.textContent = `Money: $${money}`;
             autoClickerCount.textContent = `x${autoClickers}`;
             autoClickerImage.style.display = 'none';
@@ -85,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
             buttonElement.textContent = buttonElement.textContent.replace(/\(\-\$\d+\)/, `(-$${autoClickerCosts[button]})`);
             localStorage.setItem("money", money);
             localStorage.setItem("autoClickers", autoClickers);
+            localStorage.setItem("autoClickerCosts", JSON.stringify(autoClickerCosts));
 
             // Update the auto clicker interval to reflect the new auto clicker speed
             clearInterval(window.autoClickerIntervalId);
