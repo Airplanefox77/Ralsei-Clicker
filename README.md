@@ -1,4 +1,4 @@
-Ralsei Clicker Version (1.0) 
+Ralsei Clicker Version (2.0) 
 
 __________________________________________________
 
