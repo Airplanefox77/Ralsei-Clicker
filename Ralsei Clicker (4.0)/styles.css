@@ -1,0 +1,160 @@
+:root {
+    --x-pos: 72%;
+    --y-pos: 30%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0c0125;
+    font-family: Arial, sans-serif;
+}
+
+.image-container {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: var(--y-pos);
+    left: var(--x-pos);
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+}
+
+.clickable-box {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    width: 600px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    border: 2px solid rgba(255, 255, 255, 0); /* Fully transparent border */
+    cursor: pointer;
+}
+
+.shop-box {
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 600px;
+    background-color: rgb(0, 0, 0); /* Semi-transparent black background */
+    border: 6px solid rgb(255, 217, 0); /* Yellow border */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw; /* Use viewport width to scale text */
+}
+
+.shop-box .shop-name {
+    position: absolute;
+    top: 10px; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+button {
+    width: 80%; /* Adjust button width to fit within the shop box */
+    height: auto;
+    padding: 1vw 0; /* Adjust padding to scale with the viewport */
+    background-color: yellow;
+    border: 2px solid black;
+    color: black;
+    font-size: 1em; /* Relative to the shop box font-size */
+    cursor: pointer;
+    margin: 1.5vw 0; /* Adjust margin to scale with the viewport */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.1s; /* Add click animation */
+    text-align: center; /* Ensure text is centered */
+}
+
+button:active {
+    transform: scale(0.95); /* Click animation */
+}
+
+.auto-clicker-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.auto-clicker-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.auto-clicker-info span {
+    font-size: 1em; /* Relative to the shop box font-size */
+    color: white;
+}
+
+.money-counter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.clicker-name {
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    color: white;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.settings-tab {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #000;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    color: white;
+    z-index: 1000;
+}
+
+.settings-tab input {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ffcc00;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.settings-tab button {
+    width: 100%;
+    margin: 10px 0;
+}
