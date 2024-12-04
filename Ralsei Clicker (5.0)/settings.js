@@ -44,10 +44,12 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("clickerName", clickerName);
             clickerNameDisplay.textContent = `${clickerName}'s Ralsei Clicker`;
             updateMoneyDisplay();
+            checkNameAchievement(newName); // Call this to check for the "ping" name
         } else {
             alert(`Name is too long! Please enter a name with a maximum of ${maxLength} characters.`);
         }
     });
+    
 
     function updateHardMode() {
         // Retrieve stored costs or reset to original

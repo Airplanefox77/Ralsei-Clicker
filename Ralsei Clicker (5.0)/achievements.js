@@ -58,14 +58,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function unlockAchievement(id) {
+    function unlockAchievement(id, allowRepetition = false) {
         const achievement = achievements.find(a => a.id === id);
-        if (achievement && !achievement.achieved) {
-            achievement.achieved = true;
-            showAchievementNotification(achievement);
-            saveAchievements();
+        if (achievement && (!achievement.achieved || allowRepetition)) {
+            if (!achievement.achieved || allowRepetition) {
+                achievement.achieved = true;
+                showAchievementNotification(achievement);
+                if (!allowRepetition) saveAchievements();
+            }
         }
     }
+    
+    function checkNameAchievement(name) {
+        if (name.toLowerCase() === 'ping') {
+            unlockAchievement('pingpong', true);
+        }
+    }
+    
 
     function showAchievementNotification(achievement) {
         const notification = document.createElement('div');
